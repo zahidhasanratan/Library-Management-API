@@ -1,12 +1,25 @@
+import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
 import app from "./app";
-import { Request, Response } from "express";
 
-const PORT = 5000;
+dotenv.config();
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World ratan!");
-});
+const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGODB_URI || "";
 
-app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
-});
+const client = new MongoClient(MONGO_URI);
+
+async function startServer() {
+  try {
+    await client.connect();
+    console.log("✅ Connected to MongoDB");
+
+    app.listen(PORT, () => {
+      console.log(`Server running at http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    console.error("MongoDB connection failed:", error);
+  }
+}
+
+startServer();
