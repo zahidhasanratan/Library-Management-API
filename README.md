@@ -74,16 +74,23 @@ npm start
 
 ### 6. Test the API using Postman or cURL
 
-🔄 API Endpoints
-📘 Books
-Method Endpoint Description
-GET /api/books Get all books (with filter/sort)
-GET /api/books/:id Get a book by ID
-POST /api/books Create a new book
-PATCH /api/books/:id Update a book by ID
-DELETE /api/books/:id Delete a book by ID
+### 6. Test the API using Postman or cURL
 
-📦 Borrow
-Method Endpoint Description
-POST /api/borrow Borrow a book
-GET /api/borrow/summary Get summary of borrowed books
+🔄 API Endpoints
+
+#### 📘 Books
+
+| Method | Endpoint       | Description                      |
+| ------ | -------------- | -------------------------------- |
+| GET    | /api/books     | Get all books (with filter/sort) |
+| GET    | /api/books/:id | Get a book by ID                 |
+| POST   | /api/books     | Create a new book                |
+| PATCH  | /api/books/:id | Update a book by ID              |
+| DELETE | /api/books/:id | Delete a book by ID              |
+
+#### 📦 Borrow
+
+| Method | Endpoint            | Description                   |
+| ------ | ------------------- | ----------------------------- |
+| POST   | /api/borrow         | Borrow a book                 |
+| GET    | /api/borrow/summary | Get summary of borrowed books |
