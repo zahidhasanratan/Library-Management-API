@@ -22,11 +22,20 @@ const createBook = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         });
     }
     catch (error) {
-        res.status(400).json({
-            message: "Validation failed",
-            success: false,
-            error,
-        });
+        if (error instanceof Error) {
+            res.status(400).json({
+                message: "Validation failed",
+                success: false,
+                error: error.message,
+            });
+        }
+        else {
+            res.status(400).json({
+                message: "Validation failed",
+                success: false,
+                error: String(error),
+            });
+        }
     }
 });
 exports.createBook = createBook;
@@ -51,11 +60,20 @@ const getAllBooks = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         });
     }
     catch (error) {
-        res.status(500).json({
-            success: false,
-            message: "Failed to get books",
-            error,
-        });
+        if (error instanceof Error) {
+            res.status(500).json({
+                success: false,
+                message: "Failed to get books",
+                error: error.message,
+            });
+        }
+        else {
+            res.status(500).json({
+                success: false,
+                message: "Failed to get books",
+                error: String(error),
+            });
+        }
     }
 });
 exports.getAllBooks = getAllBooks;
@@ -78,11 +96,20 @@ const getBookById = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         });
     }
     catch (error) {
-        res.status(500).json({
-            message: "Failed to retrieve book",
-            success: false,
-            error,
-        });
+        if (error instanceof Error) {
+            res.status(500).json({
+                message: "Failed to retrieve book",
+                success: false,
+                error: error.message,
+            });
+        }
+        else {
+            res.status(500).json({
+                message: "Failed to retrieve book",
+                success: false,
+                error: String(error),
+            });
+        }
     }
 });
 exports.getBookById = getBookById;
@@ -108,11 +135,20 @@ const updateBook = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         });
     }
     catch (error) {
-        res.status(400).json({
-            message: "Validation failed",
-            success: false,
-            error,
-        });
+        if (error instanceof Error) {
+            res.status(400).json({
+                message: "Validation failed",
+                success: false,
+                error: error.message,
+            });
+        }
+        else {
+            res.status(400).json({
+                message: "Validation failed",
+                success: false,
+                error: String(error),
+            });
+        }
     }
 });
 exports.updateBook = updateBook;
@@ -135,11 +171,20 @@ const deleteBook = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         });
     }
     catch (error) {
-        res.status(500).json({
-            message: "Failed to delete book",
-            success: false,
-            error,
-        });
+        if (error instanceof Error) {
+            res.status(500).json({
+                message: "Failed to delete book",
+                success: false,
+                error: error.message,
+            });
+        }
+        else {
+            res.status(500).json({
+                message: "Failed to delete book",
+                success: false,
+                error: String(error),
+            });
+        }
     }
 });
 exports.deleteBook = deleteBook;

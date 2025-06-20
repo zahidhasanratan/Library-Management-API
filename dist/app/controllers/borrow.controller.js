@@ -41,11 +41,19 @@ const borrowBook = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         });
     }
     catch (error) {
-        res.status(500).json({
-            success: false,
-            message: "Failed to borrow book",
-            error,
-        });
+        if (error instanceof Error) {
+            res.status(500).json({
+                success: false,
+                message: error.message,
+                error,
+            });
+        }
+        else {
+            res.status(500).json({
+                success: false,
+                message: "An unknown error occurred",
+            });
+        }
     }
 });
 exports.borrowBook = borrowBook;
@@ -87,11 +95,19 @@ const getBorrowedSummary = (_req, res) => __awaiter(void 0, void 0, void 0, func
         });
     }
     catch (error) {
-        res.status(500).json({
-            success: false,
-            message: "Failed to get summary",
-            error,
-        });
+        if (error instanceof Error) {
+            res.status(500).json({
+                success: false,
+                message: error.message,
+                error,
+            });
+        }
+        else {
+            res.status(500).json({
+                success: false,
+                message: "An unknown error occurred",
+            });
+        }
     }
 });
 exports.getBorrowedSummary = getBorrowedSummary;

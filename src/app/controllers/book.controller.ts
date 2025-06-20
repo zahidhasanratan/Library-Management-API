@@ -1,3 +1,6 @@
+import { FilterQuery } from "mongoose";
+import { IBook } from "../models/book.model";
+
 import { Request, Response } from "express";
 import { Book } from "../models/book.model";
 
