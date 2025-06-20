@@ -1,16 +1,16 @@
 import { ErrorRequestHandler } from "express";
 
-export const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
+export const errorHandler: ErrorRequestHandler = (err, req, res) => {
   let statusCode = 500;
   let message = "Something went wrong";
 
-  // Validation error
+  // Handle Mongoose validation error
   if (err.name === "ValidationError") {
     statusCode = 400;
     message = "Validation failed";
   }
 
-  // CastError (invalid ObjectId)
+  // Handle invalid ObjectId cast error
   if (err.name === "CastError") {
     statusCode = 400;
     message = "Invalid ID format";
