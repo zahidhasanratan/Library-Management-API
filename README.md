@@ -88,10 +88,10 @@ npm start
 
 #### 📦 Borrow
 
-| Method | Endpoint            | Description                   |
-| ------ | ------------------- | ----------------------------- |
-| POST   | /api/borrow         | Borrow a book                 |
-| GET    | /api/borrow/summary | Get summary of borrowed books |
+| Method | Endpoint    | Description                   |
+| ------ | ----------- | ----------------------------- |
+| POST   | /api/borrow | Borrow a book                 |
+| GET    | /api/borrow | Get summary of borrowed books |
 
 ### 7. Run the tests
 
