@@ -74,8 +74,6 @@ npm start
 
 ### 6. Test the API using Postman or cURL
 
-### 6. Test the API using Postman or cURL
-
 🔄 API Endpoints
 
 #### 📘 Books
@@ -94,3 +92,7 @@ npm start
 | ------ | ------------------- | ----------------------------- |
 | POST   | /api/borrow         | Borrow a book                 |
 | GET    | /api/borrow/summary | Get summary of borrowed books |
+
+### 7. Run the tests
+
+### 8. Fix the tests and make them pass
